@@ -1,8 +1,14 @@
 window.onload = () => {
   const styleElement = document.createElement('style');
   styleElement.innerText =
-    ':root {filter: invert(1) hue-rotate(180deg) !important} html img {filter: invert(1) hue-rotate(180deg) !important}';
-  document.head.append(styleElement);
+    'html {' +
+    'filter: invert(1) hue-rotate(180deg) !important;' +
+    'transition: color 300ms, background-color 300ms !imporant;' +
+    '}' +
+    'html img {' +
+    'filter: invert(1) hue-rotate(180deg) !important ' +
+    '}';
+  document.head.appendChild(styleElement);
   return styleElement;
 };
 
