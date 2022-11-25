@@ -8,12 +8,13 @@ window.onload = () => {
   // Create Toggle Button
   const btn = document.createElement('button');
   btn.innerHTML = '🌙';
+  btn.style.fontSize = '1rem';
   btn.style.background = 'black';
   btn.style.color = 'white';
   btn.style.border = 'none';
   btn.style.borderRadius = '100%';
-  btn.style.height = '3rem';
-  btn.style.width = '3rem';
+  btn.style.height = '2.5rem';
+  btn.style.width = '2.5rem';
   btn.style.padding = '0';
   btn.style.position = 'absolute';
   btn.style.top = '0';
@@ -24,7 +25,7 @@ window.onload = () => {
   const toggle = document.getElementById('theme-toggle');
 
   // Add Toggle Dark Mode Feature
-  toggle.addEventListener('click', function () {
+  toggle.onclick = () => {
     if (toggle.textContent === '🌙') {
       toggle.style.backgroundColor = 'white';
       toggle.innerHTML = '💡';
@@ -44,7 +45,7 @@ window.onload = () => {
       toggle.innerHTML = '🌙';
       toggleStyle.innerText = '';
     }
-  });
+  };
 };
 
 // One Show Dark Mode: https://dev.to/akhilarjun/one-line-dark-mode-using-css-24li
