@@ -1,4 +1,14 @@
 window.onload = () => {
+  // Get Script Params
+  const drkmdeScript = document.querySelector('#drkmde');
+  const defaultBackgroundColor = drkmdeScript.dataset.defaultBg || 'white';
+
+  // Set default background color
+  let htmlElement = document.querySelector('html');
+  if (!htmlElement.style.backgroundColor) {
+    htmlElement.style.backgroundColor = defaultBackgroundColor;
+  }
+
   // Create Style Element
   const styleElement = document.createElement('style');
   styleElement.setAttribute('id', 'theme-style');
@@ -23,12 +33,6 @@ window.onload = () => {
   btn.setAttribute('id', 'theme-toggle');
   document.body.append(btn);
   const toggle = document.getElementById('theme-toggle');
-
-  // Set default background color
-  let htmlElement = document.querySelector('html');
-  if (!htmlElement.style.backgroundColor) {
-    htmlElement.style.backgroundColor = 'white';
-  }
 
   // Add Toggle Dark Mode Feature
   toggle.onclick = () => {
@@ -59,3 +63,4 @@ window.onload = () => {
 // Use Append Over Append Child: https://flexiple.com/javascript/javascript-appendchild/
 // Style Type is Deprecated: https://developer.mozilla.org/en-US/docs/Web/API/HTMLStyleElement/type
 // Create button: https://sebhastian.com/javascript-create-button/
+// How to inject parameters: https://stackoverflow.com/questions/5292372/how-to-pass-parameters-to-a-script-tag
