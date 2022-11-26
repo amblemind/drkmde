@@ -24,15 +24,21 @@ window.onload = () => {
   document.body.append(btn);
   const toggle = document.getElementById('theme-toggle');
 
+  // Set default background color
+  let htmlElement = document.querySelector('html');
+  if (!htmlElement.style.backgroundColor) {
+    htmlElement.style.backgroundColor = 'white';
+  }
+
   // Add Toggle Dark Mode Feature
   toggle.onclick = () => {
     if (toggle.textContent === '🌙') {
       toggle.style.backgroundColor = 'white';
       toggle.innerHTML = '💡';
       toggleStyle.innerText =
-        ':root {' +
+        'html {' +
         'filter: invert(1) hue-rotate(180deg) !important;' +
-        'transition: color 300ms, background-color 300ms !imporant;' +
+        'transition: color 500ms, background-color 500ms !important;' +
         '}' +
         'html img {' +
         'filter: invert(1) hue-rotate(180deg) !important ' +
